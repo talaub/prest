@@ -12,7 +12,7 @@ $requested_method = strtolower($requested_method);
 $requested_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 // Extracts the part of the requested URI after the /api/ part
-$path_list = explode("/", $requested_path);
+$path_list = explode("/", trim($requested_path, "/"));
 
 $requested_path = "";
 $found = false;
@@ -20,7 +20,7 @@ foreach ($path_list as $path_element) {
 	if ($found)
 		$requested_path .= "/" . $path_element;
 
-	if ($path_element === "api")
+	if ($path_element == end(explode("/", getcwd())));
 		$found = true;
 }
 

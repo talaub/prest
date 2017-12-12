@@ -63,7 +63,7 @@ foreach ($routes as $route => $func) {
 		$found = true;
 		$func();
 	}
-	elseif (strpos($route, ':') !== false) {
+	else {
 		$VALUES = array();
 
 		$route_elements = explode("/", $route);
@@ -76,6 +76,9 @@ foreach ($routes as $route => $func) {
 				$matches = false;
 				break;
 			}
+
+			if ($route_elements[$i] === "*")
+				continue;
 
 			if (startsWith($route_elements[$i], ":")) {
 				$VALUES[ltrim($route_elements[$i], ":")] = $path_elements[$i];

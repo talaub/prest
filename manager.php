@@ -83,7 +83,7 @@ foreach ($routes as $route => $func) {
 			}
 
 			if ($route_elements[$i] != $path_elements[$i]) {
-				$mathes = false;
+				$matches = false;
 				break;
 			}
 		}

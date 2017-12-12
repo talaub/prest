@@ -33,7 +33,7 @@ The `$PARAMS`-array is basically an alias for the `$_GET`-array.
 If you want to pass additional parameters through the URL you can use dynamic routes. Every dynamic element starts with a `:`. The name and it's value will be contained in the `$VALUES`-array. An example:
 ```php
 $routes[":name"] = function ($VALUES) use ($PARAMS) {
-  // your code with $VALUE["name"]
+  // your code with $VALUES["name"]
 }
 ```
-This route can be acces via `yourdomain.com/api/users/foo`. Inside the function `$VALUE["name"]` will have the value `foo`.
+This route can be acces via `yourdomain.com/api/users/foo`. Inside the function `$VALUES["name"]` will have the value `foo`.
